@@ -1,6 +1,13 @@
 {
   "name": "blockchain-ethereum-template",
   "version": "0.1.0",
+  "scripts": {
+    "start-node": "ganache-cli",
+    "test": "truffle test",
+    "compile": "truffle compile",
+    "migrate": "truffle migrate",
+    "deploy": "truffle deploy"
+  },
   "private": true,
   "dependencies": {
     "truffle-assertions": "^0.9.2",
