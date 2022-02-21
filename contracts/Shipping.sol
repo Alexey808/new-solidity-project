@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.9.0;
+pragma solidity >=0.8.0 <0.9.0;
 
 contract Shipping {
     // Our predefined values for shipping listed as enums
@@ -12,7 +12,7 @@ contract Shipping {
     event LogNewAlert(string description);
 
     // This initializes our contract state (sets enum to Pending once the program starts)
-    constructor() public {
+    constructor() {
         status = ShippingStatus.Pending;
     }
     // Function to change to Shipped
@@ -32,7 +32,11 @@ contract Shipping {
      // Check the current status and return the correct name
      if (ShippingStatus.Pending == _status) return "Pending";
      if (ShippingStatus.Shipped == _status) return "Shipped";
-     if (ShippingStatus.Delivered == _status) return "Delivered";
+     if (ShippingStatus.Delivered == _status) {
+         return "Delivered";
+     } else {
+         return "";
+     }
     }
 
    // Get status of your shipped item
