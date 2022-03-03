@@ -26,17 +26,23 @@
 `npm install -g truffle`  
 
 **Команды:**
-`$ truffle create contract ExampleContract` - создать контракт  
-`$ truffle create migration ExampleMigration` - создать миграцию  
-`$ truffle create test ExampleContract` - создать тест  
-`truffle develop` - поднять тестовое окружение  
-`truffle(develop)> compile` - компиляция  
-`truffle(develop)> migrate` - миграция  
-`truffle(develop)> test` - тест  
-`truffle(develop)> .exit` - выход  
-`truffle(development)> migrate --reset ` - 
-`$ truffle console` - вывод в консоль если используем GUI 
+`truffle` - Проверка установленного пакета truffle  
+`truffle create contract ExampleContract` - создать контракт  
+`truffle create migration ExampleMigration` - создать миграцию  
+`truffle create test ExampleContract` - создать тест  
 
+`truffle migrate --network MY_NETWORK_NAME` - миграция контрактов выбранной сети  
+`truffle develop` - поднять тестовое окружение (лучше использовать console с выбранной сетью)   
+`truffle networks` - показывает развернутые контракты сети
+`truffle networks --clean` - очищает развернутые контракты не именованной сети (в других случаях нужно удалить контракты в кроне проекта в папке build).  
+`truffle console` - вывод в консоль если используем GUI (перед этим запустить ganache-cli --networkId 1337, где networkId это id сети)  
+
+`truffle(development)> compile` - компиляция  
+`truffle(development)> migrate` - миграция  
+`truffle(development)> migrate --reset ` - запустить пере-миграцию всех контрактов
+`truffle(development)> test` - тест  
+`truffle(development)> .exit` - выход  
+`truffle(development)> await web3.eth.getBlock("latest")` - просмотреть данные по последнему блоку  
 
 
 **Ссылки**
@@ -54,13 +60,10 @@
 **Установка пакета**  
 `npm install -g ganache-cli`
 
-**Проверка установленного пакета truffle**  
-`truffle`  
-
 **Команды**    
-`truffle compile`  
-`truffle migrate`  
-`truffle test`  
+`ganache-cli` - запуск сети с параметрами по умолчанию   
+`ganache-cli --networkId 1337` - запуск сети по id  
+`ganache -p 8545` - изменение порта для ganache  
 
 **Ссылки**  
 (Ganache git)[https://github.com/trufflesuite/ganache]
